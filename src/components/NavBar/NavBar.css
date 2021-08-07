@@ -1,0 +1,55 @@
+nav {
+  background: linear-gradient(45deg, #b73737, #221e7d) !important;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  max-height: 8vh;
+}
+nav ul {
+  min-height: 05vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  width: 60%;
+  margin: 0px;
+}
+nav li {
+  list-style: none;
+  padding: 2.6vh;
+}
+nav a{
+  color: white;
+  font-size: 18px;
+  padding: 1.9vh; 
+  text-decoration: none;
+  padding: 1vh;
+}
+nav a:hover{
+  color: black;
+  font-weight: 600;
+}
+nav li:hover {
+  font-weight: 600;
+  font-size: 18px;
+  border-bottom: 3.4px solid black;
+}
+nav img{
+	height: 70px ;
+}
+#nav-dropdown{
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+#nav-dropdown:hover{
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+
