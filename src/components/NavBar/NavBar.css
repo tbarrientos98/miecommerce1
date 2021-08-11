@@ -3,24 +3,23 @@ nav {
   display: flex;
   text-align: center;
   align-items: center;
-  justify-content: center;
-  max-height: 8vh;
+  justify-content: space-evenly;
+  max-height: 9vh;
 }
 nav ul {
-  min-height: 05vh;
-  display: flex;
+  /* max-height: 05vh; */
+  display: inline-flex;
   text-align: center;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   color: white;
   font-size: 18px;
   font-weight: 500;
-  width: 60%;
   margin: 0px;
 }
 nav li {
   list-style: none;
-  padding: 2.6vh;
+  padding: 1.9vh 5vh;
 }
 nav a{
   color: white;
@@ -36,7 +35,7 @@ nav a:hover{
 nav li:hover {
   font-weight: 600;
   font-size: 18px;
-  border-bottom: 3.4px solid black;
+  border-bottom: 4px solid black;
 }
 nav img{
 	height: 70px ;

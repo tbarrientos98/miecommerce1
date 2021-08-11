@@ -1,43 +1,36 @@
 import React from 'react';
-import "./NavBar.css";
-import logo from "./coderhouse-logo.png";
-// import Button from '@material-ui/core/Button';
-// import Menu from '@material-ui/core/Menu';
-// import MenuItem from '@material-ui/core/MenuItem';
+import logo from "./CANDYBAY2.png";
 import {NavDropdown} from 'react-bootstrap'
+import "./NavBar.css";
+import CartWidget from '../CartWidget/CartWidget';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 const NavBar = () => {
-
 	const style = {
 		servicios:{
-			padding:"1.9vh"
-
+			padding:"1.1vh 5vh"
 		}
 	};
 	return (
-		<nav>
+		<nav >
 			<img src={logo} alt="logo de coder" />
-			<ul>
-				<li><a href="#">HOME</a></li>
-				<li><a href="/">PROYECTOS</a></li>
+			<ul className="NavBar">
+				<li><a href="/">HOME</a></li>
+				<li><a href="/">PRODUCTOS</a></li>
 				<li style={style.servicios}>
-					<NavDropdown title="SERVICIOS" className="nav-dropdown" id="nav-dropdown">
-						<NavDropdown.Item eventKey="4.1">Diseños de páginas web para empresas, profesionales y emprendedores.</NavDropdown.Item>
-						<NavDropdown.Item eventKey="4.2">Diseño responsive</NavDropdown.Item>
-						<NavDropdown.Item eventKey="4.3">Servicio de hosting</NavDropdown.Item>
+					<NavDropdown title="NOSOTROS" menuVariant="dark" className="" id="nav-dropdown">
+						<NavDropdown.Item eventKey="4.1">Golosinas</NavDropdown.Item>
+						<NavDropdown.Item eventKey="4.2">Chocolatería</NavDropdown.Item>
+						<NavDropdown.Item eventKey="4.3">Sucursales</NavDropdown.Item>
 						<NavDropdown.Divider />
-						<NavDropdown.Item eventKey="4.4">CURSOS</NavDropdown.Item>
+						<NavDropdown.Item eventKey="4.4">Envíos a domicilio</NavDropdown.Item>
 					</NavDropdown>
-            </li>
-
-
-			<li><a href="/">CONTACTO</a></li>
-        </ul>
-    </nav>
+            	</li>
+				<li><a href="/">CONTACTO</a></li>
+        	</ul>
+			<CartWidget />
+		</nav>
 	);
 }
 
-export default NavBar
+export default NavBar;

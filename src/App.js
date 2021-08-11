@@ -1,28 +1,12 @@
-import React from 'react';
 import "./App.css";
-import NavBar from './components/NavBar/NavBar';
-
-
-
+import Header from './components/Header/Header';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
-	// const [anchorEl, setAnchorEl] = React.useState(null);
-	// const open = Boolean(anchorEl);
-
-	// const handleClick = (event) => {
-	// 	setAnchorEl(event.currentTarget);
-	// };
-
-	// const handleClose = () => {
-	// 	setAnchorEl(null);
-	// };
 	return (
 		<div className="App">
-			<NavBar />
-
-
-
-			<h1></h1>
+			<Header/>
+			<ItemListContainer saludo="Hola, Bienvenidos a Candybay!"/>
 		</div>
 	);
 }

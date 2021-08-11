@@ -1,0 +1,13 @@
+.ItemListContainer{
+    background-color: rgba(253, 252, 175, 0.281);
+    font-family:Arial, Helvetica, sans-serif;
+    min-height: 30vh;
+    font-weight: 700!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ItemListContainer h1{
+    font-size: 50px;
+    font-weight: 600!important;
+}

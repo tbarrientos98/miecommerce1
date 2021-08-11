@@ -1,0 +1,15 @@
+.CartWidget{
+    font-size: 25px;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.CartWidget a{
+    font-size: 25px;
+    color:white;
+    min-width: 10vh;
+}
+.iconos :hover{
+    color: black;
+}
