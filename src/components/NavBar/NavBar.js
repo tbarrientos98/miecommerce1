@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const NavBar = () => {
 	const style = {
 		servicios:{
-			padding:"1.1vh 5vh"
+			padding:"11px 11px"
 		}
 	};
 	return (
