@@ -2,3 +2,7 @@
     margin-bottom: 15px;
     text-align: start;
 }
+.botonesItemCount{
+    display: flex;
+    justify-content: space-between;
+}

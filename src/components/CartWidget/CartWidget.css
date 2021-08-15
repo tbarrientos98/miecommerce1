@@ -3,7 +3,8 @@
     color:white;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    width: 400px;
 }
 .CartWidget a{
     font-size: 25px;

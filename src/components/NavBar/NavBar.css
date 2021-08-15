@@ -1,9 +1,11 @@
 nav {
-  background: linear-gradient(45deg, #b73737, #221e7d) !important;
+  /* background: linear-gradient(45deg, #b73737, #221e7d) !important; */
+  /* background: linear-gradient(45deg, #054384, #00ffb89c) !important; */
+  background: linear-gradient(180deg, #f07020, #f90000a6) !important;
   display: flex!important;
   text-align: center;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   max-height: 75px;
 }
 nav ul {
@@ -19,11 +21,11 @@ nav ul {
 }
 nav li {
   list-style: none;
-  padding: 19px 5vh;
+  padding: 23px 0px;
 }
 nav a{
   color: white;
-  font-size: 18px;
+  font-size: 15px;
   padding: 1.9vh; 
   text-decoration: none;
   padding: 1vh;

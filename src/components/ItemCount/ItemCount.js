@@ -1,31 +1,52 @@
 import './ItemCount.css'
+import React from 'react'
 import { Card, Button, Image } from 'semantic-ui-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
 
 const ItemCount = (props) => {
+
+    //DECLARANDO HOOK, SET(EL HOOK QUE DECLARO), LO QUE VA DENTRO DE USESTATE ES EL VALOR DEL ESTADO
+    const [counter, setCounter] = React.useState(props.initial); 
+
+    const sumarCounter = () => {
+        const stock = props.stock;
+        if(stock && counter < stock){
+            setCounter(Number(counter) + 1);
+        }else{
+            setCounter(Number(counter) * 1);
+        }
+    }    
+    const restarCounter = () => {
+        const stock = props.stock;
+        if(stock && counter > 0){
+            setCounter(counter - 1);
+        }else{
+            setCounter(Number(counter) * 1);
+        }
+    }
+
     return (
         <div className="Card">
-            <Card>
+            <Card className="shadow">
                 <Image src={props.imagen} alt="asdasd" wrapped ui={false} />
-                <Card.Content
-                    // image='flyynPaff.jpg'
-                    // img={props.imagen}
+                <Card.Content className=""
                     header={props.titulo}
-                    meta='Friend'
+                    description={`Precio: $${props.precio}`}
+                    meta={`Stock:   ${ props.stock}`}
                     // description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
-                >
+                    >
                 </Card.Content>
                 <Card.Content> 
                     <div className="cantidad">
-                        Cantidad: {props.cantidad} {props.seVendeEn}
+                        Cantidad: {counter} {props.seVendeEn}
                     </div>
-                    <div className='ui two buttons'>
-                        <Button basic color='blue'>
+                    <div className='ui two botonesItemCount'>
+                        <Button inverted color='green' onClick={sumarCounter}>
                             <FontAwesomeIcon icon={faPlus} />
                         </Button>
-                        <Button basic color='red'>
+                        <Button inverted color='red' onClick={restarCounter}>
                             <FontAwesomeIcon icon={faMinus} />
                         </Button>
                     </div>

@@ -11,10 +11,10 @@ const ItemListContainer = (props) => {
             <div className="ItemListContainer">
                 <h1>{props.saludo}</h1>
             </div>
-            <div className="container cards">
-                <ItemCount imagen={flyynPaff} alt="" seVendeEn="gr" cantidad="0" titulo="Caramelos Flynn Paff"/>
-                <ItemCount imagen={butterToffee} seVendeEn="gr" cantidad="0" titulo="Caramelos Butter Toffees"/>
-                <ItemCount imagen={rhodesia} seVendeEn="unidades" cantidad="0" titulo="Rhodesia"/>
+            <div className="container-fluid py-5 cards">
+                <ItemCount precio="5" stock="5" initial="2" imagen={flyynPaff} alt="" seVendeEn="unidades" titulo="Caramelos Flynn Paff"/>
+                <ItemCount precio="2" stock="3" initial="4" imagen={butterToffee} seVendeEn="unidades" titulo="Caramelos Butter Toffees"/>
+                <ItemCount precio="20" stock="10" initial="2" imagen={rhodesia} seVendeEn="unidades" titulo="Rhodesia"/>
             </div>
         </div>
             

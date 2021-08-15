@@ -1,5 +1,9 @@
 .ItemListContainer{
-    background-color: rgba(253, 252, 175, 0.281);
+    background-image: linear-gradient(
+    180deg
+    , rgba(11, 123, 84, 0.22) 0%, rgba(220, 76, 52, 0.22) 0%, rgba(220, 76, 52, 0.22) 29%, rgba(220, 76, 52, 0.8) 76%, rgba(220, 76, 52, 0.8) 100%);
+    background-color: #f07020;
+    opacity: 0.9;
     font-family:Arial, Helvetica, sans-serif;
     min-height: 30vh;
     font-weight: 700!important;
@@ -15,5 +19,5 @@
     min-height: 40vh;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
