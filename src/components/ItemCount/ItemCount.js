@@ -1,6 +1,6 @@
 import './ItemCount.css'
-import React from 'react'
-import { Card, Button, Image } from 'semantic-ui-react'
+import React/* , { useEffect } */ from 'react'
+import { Card, Button } from 'semantic-ui-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
@@ -30,14 +30,13 @@ const ItemCount = (props) => {
     return (
         <div className="Card">
             <Card className="shadow">
-                <Image src={props.imagen} alt="asdasd" wrapped ui={false} />
+                {/* <Image src={props.imagen} alt="asdasd" wrapped ui={false} />
                 <Card.Content className=""
                     header={props.titulo}
                     description={`Precio: $${props.precio}`}
                     meta={`Stock:   ${ props.stock}`}
-                    // description='Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat.'
                     >
-                </Card.Content>
+                </Card.Content> */}
                 <Card.Content> 
                     <div className="cantidad">
                         Cantidad: {counter} {props.seVendeEn}
