@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Item from '../Item/Item';
 import './ItemList.css';
+import { Link } from 'react-router-dom';
 
 const ItemList = () => {
 
@@ -15,8 +16,13 @@ const ItemList = () => {
         <div className="container-fluid py-5 cards">
             {items.map((item) => {
                 return(
-                    <Item data={item} key={item.id}/>
-                );
+                    <div key={item.id}>
+                        {/* ABRO LLAVES PARA USAR LENGUAJE JS EN JSX, USO BACKTIPS NO SE POR QUE ¿? */}
+                        <Link to={`/detail/${item.id}`}>
+                            <Item data={item}/>
+                        </Link>
+                    </div>
+                );  
             })}
         </div>
     );

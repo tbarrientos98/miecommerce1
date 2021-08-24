@@ -31,11 +31,10 @@ nav a{
   padding: 1vh;
 }
 nav a:hover{
-  color: black;
+  color: white;
   font-weight: 600;
 }
 nav li:hover {
-  font-weight: 600;
   font-size: 18px;
   border-bottom: 4px solid black;
 }
@@ -51,6 +50,9 @@ nav img{
   list-style: none;
   text-decoration: none;
   color: black;
+}
+.to{
+  font-size: 16px;
 }
 
 
