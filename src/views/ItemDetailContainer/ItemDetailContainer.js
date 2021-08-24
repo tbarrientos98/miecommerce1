@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router";
-import axios from 'axios'
+import axios from 'axios';
+import ItemDetail from '../ItemDetail/ItemDetail';
+
 // import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
 
-    // console.log(match);
-    // let itemId ;/* = match.params.id; */
-    const {itemId} = useParams();
-    console.log(itemId)
-    
-    // const [item, setItem] = useState([]);
-
+    const {id} = useParams();
+    const [item, setItem] = useState([]);
     useEffect(() => {
-        axios(`../../products.json/${itemId}`).then(res=>
-            console.log(res.data)
+        axios(`../../../products.json`).then(res=>
+            res.data.map((item) => {
+                if(item.id === id ){
+                    setItem(item);
+                }
+            })
         );
-    }, [itemId]);
-
+    }, [id]);
 
     return (
-        <div>
-            hola
+        <div className="container">
+            <h1 className="detalleItem">Detalle de Item</h1>
+            <ItemDetail data={item}/>
         </div>
     )
 }

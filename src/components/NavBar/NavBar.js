@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import {NavDropdown} from 'react-bootstrap'
 import CartWidget from '../CartWidget/CartWidget';
-// import Productos from '../../views/Productos/Productos';
 
 const NavBar = () => {
 	const style = {

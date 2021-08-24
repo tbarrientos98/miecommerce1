@@ -29,7 +29,7 @@ const ItemCount = (props) => {
 
     return (
         <div className="Card">
-            <Card className="shadow-sm">
+            <Card className="shadow">
                 {/* <Image src={props.imagen} alt="asdasd" wrapped ui={false} />
                 <Card.Content className=""
                     header={props.titulo}

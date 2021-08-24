@@ -1,0 +1,10 @@
+.itemDetail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3vh;
+}
+.detalleItem{
+    padding-top: 10vh;
+    font-size: 35px;
+}

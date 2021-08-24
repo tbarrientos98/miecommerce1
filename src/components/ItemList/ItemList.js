@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Item from '../Item/Item';
 import './ItemList.css';
 import { Link } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount'
+
 
 const ItemList = () => {
 
@@ -21,6 +23,8 @@ const ItemList = () => {
                         <Link to={`/detail/${item.id}`}>
                             <Item data={item}/>
                         </Link>
+                        <ItemCount initial={item.cantidad} stock={item.stock} seVendeEn={item.seVendeEn}/>
+
                     </div>
                 );  
             })}
