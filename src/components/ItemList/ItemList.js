@@ -1,26 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import Item from '../Item/Item';
 import './ItemList.css';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount'
-
+import axios from 'axios';
 
 const ItemList = () => {
 
+    const {categoryId} = useParams();
     const [items, setItems] = useState([]);
+
     useEffect(() => {
-        fetch('products.json')
-        .then(response => response.json())
-        .then(data => setItems(data));
-    }, []);
+        axios('products.json').then(res =>
+            categoryId 
+            ? setItems(res.data.filter((item) => item.category === categoryId)) 
+            : setItems(res.data)
+        );
+    },[categoryId]);
 
     return (
         <div className="container-fluid py-5 cards">
             {items.map((item) => {
                 return(
-                    <div key={item.id}>
+                    <div key={item.id} className="cardItem">
                         {/* ABRO LLAVES PARA USAR LENGUAJE JS EN JSX, USO BACKTIPS NO SE POR QUE ¿? */}
-                        <Link to={`/detail/${item.id}`}>
+                        <Link to={`/item/${item.id}`}>
                             <Item data={item}/>
                         </Link>
                         <ItemCount initial={item.cantidad} stock={item.stock} seVendeEn={item.seVendeEn}/>

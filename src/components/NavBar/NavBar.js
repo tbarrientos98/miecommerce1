@@ -5,17 +5,39 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import {NavDropdown} from 'react-bootstrap'
 import CartWidget from '../CartWidget/CartWidget';
+// import axios from 'axios';
+// import { useState } from 'react';
+// import { useEffect } from 'react';
 
 const NavBar = () => {
 	const style = {
 		servicios:{
-			padding:"16px 0px",
+			padding:"19px 0px",
 		},
 		productos:{
 			display:"grid",
 			minWidth: "150px"
 		}
 	};
+
+	/* const [categorias, setCategorias] = useState([])
+	console.log(categorias)
+	useEffect(() => {
+        axios('../../products.json')
+        .then(res => setCategorias(res.data));
+    }, []); */
+
+	const categorias = [
+		{
+			"id":"golosina",
+			"nombre": "Golosina"
+		},
+		{
+			"id":"chocolate",
+			"nombre":"Chocolatería"
+		},
+	];
+
 	return (
 		<nav >
 			<ul className="NavBar">
@@ -24,17 +46,18 @@ const NavBar = () => {
 				<li style={style.servicios}>
 					<NavDropdown title="PRODUCTOS" menuVariant="dark" className="" id="nav-dropdown">
 						<div style={style.productos}>
-							<Link to="/productos" className="to">Golosinas</Link>
-							<Link to="/productos" className="to">Chocolatería</Link>
-							<Link to="/productos" className="to">Sucursales</Link>
+							{categorias.map((categoria) => (
+								<Link key={categoria.id} className="linkCategoria" to={`/${categoria.id}`}>{categoria.nombre}</Link>
+							))}
+							<Link to="/" className="linkCategoria">Sucursales</Link>
 							<NavDropdown.Divider />
-							<Link to="/productos" className="to">Envíos a domicilio</Link>
+							<Link to="/" className="linkCategoria">Envíos a domicilio</Link>
 						</div>
 					</NavDropdown>
             	</li>
 				<li><Link to="/contacto">CONTACTO</Link></li>
         	</ul>
-			<img src={logo} alt="logo de coder" />
+			<Link to="/"><img src={logo} alt="logo de coder" /></Link>
 			<CartWidget />
 		</nav>
 	);

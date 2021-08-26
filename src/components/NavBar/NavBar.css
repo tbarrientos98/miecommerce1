@@ -21,7 +21,7 @@ nav ul {
 }
 nav li {
   list-style: none;
-  padding: 23px 0px;
+  padding: 25px 0px;
 }
 nav a{
   color: white;
@@ -51,7 +51,7 @@ nav img{
   text-decoration: none;
   color: black;
 }
-.to{
+.linkCategoria{
   font-size: 16px;
 }
 

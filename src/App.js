@@ -4,11 +4,11 @@ import Header from './components/Header/Header';
 
 import Home from './views/Home/Home'
 import Contacto from './views/Contacto/Contacto'
-import Productos from './views/Productos/Productos'
-import Nosotros from './views/Nosotros/Nosotros'
-import ItemDetailContainer from "./views/ItemDetailContainer/ItemDetailContainer";
-
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Nosotros from './views/Nosotros/Nosotros'
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Carrito from "./views/Carrito/Carrito";
+import ItemList from "./components/ItemList/ItemList";
 
 function App() {
 	return (
@@ -18,12 +18,12 @@ function App() {
 				<Switch>
 					<Route path="/" exact component={Home}></Route>
 					<Route path="/contacto" component={Contacto}></Route>
-					<Route path="/productos" component={Productos}></Route>
+					<Route path="/:categoryId" exact component={ItemList}></Route>
 					<Route path="/nosotros" component={Nosotros}></Route>
 					{/* ES RUTA DINAMICA PORQUE TIENE LOS ":"  */}
-					<Route path="/detail/:id" component={ItemDetailContainer}></Route>
+					<Route path="/item/:id" component={ItemDetailContainer}></Route>
+					<Route path="/carrito" component={Carrito}></Route>
 				</Switch>
-				{/* <ItemListContainer saludo="Hola, Bienvenidos!"/> */}
 			</div>
 		</Router>
 	);

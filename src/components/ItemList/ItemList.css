@@ -4,3 +4,6 @@
     align-items: center;
     justify-content: space-evenly;
 }
+.cardItem{
+    width: 25%!important;
+}

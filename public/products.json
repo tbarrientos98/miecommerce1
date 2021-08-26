@@ -5,6 +5,7 @@
     "precio":5,
     "cantidad":2,
     "seVendeEn":"unidades",
+    "category":"golosina",
     "descripcion": "FLYNN PAFF Sabor tradicional 560 grs. 70 unidades sin gluten, sabor a piña de caramelo masticable de 19.75 onzas. Producto de Argentina."},
 {"id":"2",
     "nombre":"Caramelos Butter Toffees",
@@ -13,6 +14,7 @@
     "precio":2,
     "cantidad":5,
     "seVendeEn":"unidades",
+    "category":"golosina",
     "descripcion": "Caramelos Butter Toffee de chocolate Aguila con leche son los clásicos caramelos masticables hechos con leche caramelo y un toque especial de chocolate AGUILA"},
 {"id":"3",
     "nombre":"Rhodesia",
@@ -21,5 +23,6 @@
     "precio":20,
     "cantidad":2,
     "seVendeEn":"unidades",
+    "category":"chocolate",
     "descripcion": "Rhodesia, obleas rellenas de vainilla y cubiertas de chocolate con un ligero sabor a limón"
 }]

@@ -5,14 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { faShoppingCart} from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 
 const CartWidget = () => {
     return (
         <div className="CartWidget">
-            <a href="/" className="iconos"><FontAwesomeIcon icon={faWhatsapp} /></a>
-            <a href="/" className="iconos"><FontAwesomeIcon icon={faInstagram} /></a>
-            <a href="/" className="iconos"><FontAwesomeIcon icon={faTwitter} /></a>
+            <Link to="/" className="iconos"><FontAwesomeIcon icon={faWhatsapp} /></Link>
+            <Link to="/" className="iconos"><FontAwesomeIcon icon={faInstagram} /></Link>
+            <Link to="/" className="iconos"><FontAwesomeIcon icon={faTwitter} /></Link>
+            <Link to="/carrito" className="iconos"><FontAwesomeIcon icon={faShoppingCart} /></Link>
         </div>
     )
 }
