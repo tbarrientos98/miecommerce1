@@ -7,6 +7,7 @@ const ItemDetailContainer = () => {
 
 	const { id } = useParams();
 	const [item, setItem] = useState([]);
+	
 	useEffect(() => {
 		axios(`../../products.json`).then(res =>
 			res.data.forEach((item) => {
@@ -20,7 +21,8 @@ const ItemDetailContainer = () => {
 	return (
 		<div className="container">
 			<h1 className="detalleItem">Detalle de Item</h1>
-			<ItemDetail data={item} />
+			{/* LA PROP {id} TENGO QUE SETEARLA CON CONTEXT PARA PODER USARLA EN ITEMCOUNT */}
+			<ItemDetail item={item} id={id}/>
 		</div>
 	)
 }

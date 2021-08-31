@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Item from '../Item/Item';
 import './ItemList.css';
 import { Link, useParams } from 'react-router-dom';
-import ItemCount from '../ItemCount/ItemCount'
+// import ItemCount from '../ItemCount/ItemCount'
 import axios from 'axios';
 
 const ItemList = () => {
@@ -27,8 +27,7 @@ const ItemList = () => {
                         <Link to={`/item/${item.id}`}>
                             <Item data={item}/>
                         </Link>
-                        <ItemCount initial={item.cantidad} stock={item.stock} seVendeEn={item.seVendeEn}/>
-
+                        {/* <ItemCount initial={item.cantidad} stock={item.stock} seVendeEn={item.seVendeEn}/> */}
                     </div>
                 );  
             })}

@@ -1,21 +1,59 @@
-import './ItemDetail.css'
-import { Card, Image } from 'semantic-ui-react'
+import "./ItemDetail.css";
+import { Card, Image, Button, Icon } from "semantic-ui-react";
+import ItemCount from "../../components/ItemCount/ItemCount";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const ItemDetail = ({data}) => {
+//ESTAS PROPS VIENEN DE ITEMDETAILCONTAINER
+const ItemDetail = ({ item, id }) => {
 
-    return (
-        <div className="itemDetail">
-          <Card className="shadow-lg">
-                <Image src={`../../../${data.img}`} alt="Caramelos" wrapped ui={false} />
-                <Card.Content className=""
-                    header={data.nombre}
-                    meta={`Precio:  $${data.precio}`}
-                    description={`Descripción: ${data.descripcion}`}
-                >
-                </Card.Content>
-            </Card>
-        </div>
-    )
-}
+	const [terminarCompra, setTerminarCompra] = useState(false);
+	const [cant, setCant] = useState(0);
 
-export default ItemDetail
+	const ondAdd = (cant) => {
+		setCant(cant);
+	}
+
+	useEffect(() => {
+		if(cant !== undefined && cant !== 0){
+			setTerminarCompra(true)
+			console.log(cant)
+		}
+	}, [cant])
+
+	return (
+		<div className="itemDetail">
+			<Card className="shadow-lg">
+				<Image
+					src={`../../../${item.img}`}
+					alt="Caramelos"
+					wrapped
+					ui={false}
+				/>
+				<Card.Content className="" header={item.nombre} meta={`Precio:  $${item.precio}`}
+					description={`Descripción: ${item.descripcion}`}
+				></Card.Content>
+			
+				{terminarCompra 
+					?<Link to="/carrito">
+						<Button animated className="terminarCompra">
+							<Button.Content visible>Terminar Compra</Button.Content>
+							<Button.Content hidden>
+								<Icon name='arrow right' />
+							</Button.Content>
+						</Button>
+					</Link>
+					:<ItemCount
+						id={id}
+						initial={1}
+						stock={item.stock}
+						seVendeEn={item.seVendeEn}
+						ondAdd={ondAdd}
+					/>
+				}
+			</Card>
+		</div>
+	);
+};
+
+export default ItemDetail;

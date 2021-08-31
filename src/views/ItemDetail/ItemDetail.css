@@ -2,9 +2,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 3vh;
+    padding-top: 1vh;
+    padding-bottom: 3vh;
 }
 .detalleItem{
-    padding-top: 10vh;
+    padding-top: 3vh;
     font-size: 35px;
+}
+.terminarCompra{
+    width: 100%;
 }

@@ -6,3 +6,8 @@
     display: flex;
     justify-content: space-between;
 }
+.agregarCarrito{
+    width: 150px;
+    background-color: white!important;
+    border: 1.5px solid  #4d4d44!important;
+}
