@@ -37,7 +37,7 @@ const ItemDetail = ({ item, id }) => {
 				></Card.Content>
 			
 				{terminarCompra 
-					?<Link to="#">
+					?<Link to="/carrito">
 						<Button animated className="terminarCompra">
 							<Button.Content visible>Terminar Compra</Button.Content>
 							<Button.Content hidden>
