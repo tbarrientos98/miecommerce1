@@ -1,23 +1,25 @@
 import "./ItemDetail.css";
 import { Card, Image, Button, Icon } from "semantic-ui-react";
 import ItemCount from "../../components/ItemCount/ItemCount";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CarritoContext } from '../../CarritoContext';
 
 //ESTAS PROPS VIENEN DE ITEMDETAILCONTAINER
 const ItemDetail = ({ item, id }) => {
 
-	const [terminarCompra, setTerminarCompra] = useState(false);
 	const [cant, setCant] = useState(0);
+	const [terminarCompra, setTerminarCompra] = useState(false);
+	const { addCarrito, removeCarrito, carrito } = useContext(CarritoContext);
 
 	const ondAdd = (cant) => {
 		setCant(cant);
+		addCarrito(item, cant, id);
 	}
 
 	useEffect(() => {
 		if(cant !== undefined && cant !== 0){
 			setTerminarCompra(true)
-			console.log(cant)
 		}
 	}, [cant])
 
@@ -35,13 +37,14 @@ const ItemDetail = ({ item, id }) => {
 				></Card.Content>
 			
 				{terminarCompra 
-					?<Link to="/carrito">
+					?<Link to="#">
 						<Button animated className="terminarCompra">
 							<Button.Content visible>Terminar Compra</Button.Content>
 							<Button.Content hidden>
 								<Icon name='arrow right' />
 							</Button.Content>
 						</Button>
+						
 					</Link>
 					:<ItemCount
 						id={id}
@@ -51,6 +54,18 @@ const ItemDetail = ({ item, id }) => {
 						ondAdd={ondAdd}
 					/>
 				}
+				{carrito.map((elem) => {
+					if(Number(elem.id) === Number(id)){
+						//console.log("esto esta");
+						return(
+						<Button key={elem.id} animated className="terminarCompra"
+							onClick={() => removeCarrito(id)}>
+							<Button.Content visible>Remover de carrito</Button.Content>
+							<Button.Content hidden><Icon name='delete' /></Button.Content>
+						</Button>) 
+					}
+				})} 
+
 			</Card>
 		</div>
 	);

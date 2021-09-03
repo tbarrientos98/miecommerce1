@@ -7,22 +7,25 @@ import Nosotros from './views/Nosotros/Nosotros'
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Carrito from "./views/Carrito/Carrito";
 import ItemList from "./components/ItemList/ItemList";
+import { CarritoProvider } from "./CarritoContext";
 
 function App() {
 	return (
-		<Router>
-			<div className="App">
-				<Header/>
-				<Switch>
-					<Route path="/" exact component={Home}></Route>
-					<Route path="/contacto" component={Contacto}></Route>
-					<Route path="/carrito" component={Carrito}></Route>
-					<Route path="/nosotros" component={Nosotros}></Route>
-					<Route path="/:categoryId" exact component={ItemList}></Route>
-					<Route path="/item/:id" component={ItemDetailContainer}></Route>
-				</Switch>
-			</div>
-		</Router>
+		<CarritoProvider>
+			<Router>
+				<div className="App">
+					<Header/>
+					<Switch>
+						<Route path="/" exact component={Home}></Route>
+						<Route path="/contacto" component={Contacto}></Route>
+						<Route path="/carrito" component={Carrito}></Route>
+						<Route path="/nosotros" component={Nosotros}></Route>
+						<Route path="/:categoryId" exact component={ItemList}></Route>
+						<Route path="/item/:id" component={ItemDetailContainer}></Route>
+					</Switch>
+				</div>
+			</Router>
+		</CarritoProvider>
 	);
 }
 

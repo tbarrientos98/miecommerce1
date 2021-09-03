@@ -9,7 +9,6 @@ const ItemCount = ({initial, stock, seVendeEn, id, ondAdd}) => {
 
     //DECLARANDO HOOK, SET(EL HOOK QUE DECLARO), LO QUE VA DENTRO DE USESTATE ES EL VALOR DEL ESTADO
     const [counter, setCounter] = useState(initial);
-    // console.log(initial)
 
     const sumarCounter = () => {    
         if(stock && counter < stock){
