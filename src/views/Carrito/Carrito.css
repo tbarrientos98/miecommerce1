@@ -1,0 +1,13 @@
+.imagen-carrito{
+    width: 100%!important;
+}
+.tabla-carrito{
+    text-align: center;
+    border-style: none;
+}
+.td-carrito{
+    border-bottom-color: white;
+}
+.icon-carrito{
+    font-size: 20px;
+}

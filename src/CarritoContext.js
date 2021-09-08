@@ -29,8 +29,18 @@ export const CarritoProvider = ({children}) => {
 
     const clear = () => setCarrito({})
 
+    const totalPrecio = () =>{
+        let totalPrecio = 0;
+        carrito.map((cart) => {
+            return(
+                totalPrecio += (cart.precio * cart.cant)
+            )
+        })
+        return `  $ ${totalPrecio}`
+    }
+
     return(
-        <CarritoContext.Provider value={{carrito, addCarrito, removeCarrito}}>
+        <CarritoContext.Provider value={{carrito, addCarrito, removeCarrito, totalPrecio, clear}}>
             {children}
         </CarritoContext.Provider>
     )
