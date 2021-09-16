@@ -2,20 +2,38 @@ import React, { useEffect, useState } from 'react'
 import Item from '../Item/Item';
 import './ItemList.css';
 import { Link, useParams } from 'react-router-dom';
-// import ItemCount from '../ItemCount/ItemCount'
-import axios from 'axios';
+import { db } from '../../firebase';
+// import axios from 'axios';
+// import { decomposeColor } from '@material-ui/core';
 
 const ItemList = () => {
 
     const {categoryId} = useParams();
     const [items, setItems] = useState([]);
+    console.log(items)
+
+    const getItems = () => {
+        db.collection('products').onSnapshot((querySnapshot) => {
+            const datos = [];
+            querySnapshot.forEach((doc) => {
+                // console.log(doc.data(), doc.id);
+                datos.push({...doc.data(), id: doc.id})
+                console.log(datos)
+            })
+            categoryId 
+            ? setItems(datos.filter((item) => item.category === categoryId)) 
+            : setItems(datos)
+        });
+    }
 
     useEffect(() => {
-        axios('products.json').then(res =>
-            categoryId 
-            ? setItems(res.data.filter((item) => item.category === categoryId)) 
-            : setItems(res.data)
-        );
+        getItems();
+
+        // axios('products.json').then(res =>
+        //     categoryId 
+        //     ? setItems(res.data.filter((item) => item.category === categoryId)) 
+        //     : setItems(res.data)
+        // );
     },[categoryId]);
 
     return (

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router";
 import axios from 'axios';
 import ItemDetail from '../../views/ItemDetail/ItemDetail';
+import { db } from '../../firebase';
 
 const ItemDetailContainer = () => {
 
@@ -9,13 +10,17 @@ const ItemDetailContainer = () => {
 	const [item, setItem] = useState([]);
 	
 	useEffect(() => {
-		axios(`../../products.json`).then(res =>
-			res.data.forEach((item) => {
+		db.collection('products').onSnapshot((querySnapshot) => {
+            const datos = [];
+            querySnapshot.forEach((doc) => {
+                datos.push({...doc.data(), id: doc.id})
+            })
+			datos.forEach((item) => {
 				if (item.id === id) {
 					setItem(item);
 				}
 			})
-		);
+        });
 	}, [id]);
 
 	return (

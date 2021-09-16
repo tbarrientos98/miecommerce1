@@ -27,7 +27,7 @@ const ItemDetail = ({ item, id }) => {
 		<div className="itemDetail">
 			<Card className="shadow-lg">
 				<Image
-					src={`../../../${item.img}`}
+					src={`${item.img}`}
 					alt="Caramelos"
 					wrapped
 					ui={false}
@@ -55,7 +55,7 @@ const ItemDetail = ({ item, id }) => {
 					/>
 				}
 				{carrito.map((elem) => {
-					if(Number(elem.id) === Number(id)){
+					if((elem.id) === (id)){
 						//console.log("esto esta");
 						return(
 						<Button key={elem.id} animated className="terminarCompra"

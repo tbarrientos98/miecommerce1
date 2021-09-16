@@ -33,7 +33,7 @@ const Carrito = () => {
 										</Button>
 									</Table.Cell>
 									<Table.Cell className="td-carrito">
-										<Image src={`../../../${cart.img}`}
+										<Image src={`${cart.img}`}
 											alt="Caramelos" className="imagen-carrito" />
 									</Table.Cell>
 									<Table.Cell className="td-carrito">{cart.nombre}</Table.Cell>

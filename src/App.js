@@ -8,7 +8,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Carrito from "./views/Carrito/Carrito";
 import ItemList from "./components/ItemList/ItemList";
 import { CarritoProvider } from "./CarritoContext";
-import { db } from "./firebase";
+// import { db } from "./firebase";
 
 function App() {
 	return (
