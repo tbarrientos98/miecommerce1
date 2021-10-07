@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Item from '../Item/Item';
-import './ItemList.css';
 import { Link, useParams } from 'react-router-dom';
 import { db } from '../../firebase';
+import './ItemList.css';
 // import axios from 'axios';
 // import { decomposeColor } from '@material-ui/core';
 
@@ -12,28 +12,23 @@ const ItemList = () => {
     const [items, setItems] = useState([]);
     console.log(items)
 
-    const getItems = () => {
-        db.collection('products').onSnapshot((querySnapshot) => {
-            const datos = [];
-            querySnapshot.forEach((doc) => {
-                // console.log(doc.data(), doc.id);
-                datos.push({...doc.data(), id: doc.id})
-                console.log(datos)
-            })
-            categoryId 
-            ? setItems(datos.filter((item) => item.category === categoryId)) 
-            : setItems(datos)
-        });
-    }
+    
 
     useEffect(() => {
-        getItems();
+        // getItems();
+        // const getItems = () => {
+            db.collection('products').onSnapshot((querySnapshot) => {
+                const datos = [];
+                querySnapshot.forEach((doc) => {
+                    datos.push({...doc.data(), id: doc.id})
+                    console.log(datos)
+                })
+                categoryId 
+                ? setItems(datos.filter((item) => item.category === categoryId)) 
+                : setItems(datos)
+            });
+        // }
 
-        // axios('products.json').then(res =>
-        //     categoryId 
-        //     ? setItems(res.data.filter((item) => item.category === categoryId)) 
-        //     : setItems(res.data)
-        // );
     },[categoryId]);
 
     return (

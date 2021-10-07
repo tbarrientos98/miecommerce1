@@ -11,3 +11,16 @@
 .icon-carrito{
     font-size: 20px;
 }
+.form-error{
+    color: red;
+    text-align: start;
+    font-weight: 800;
+    font-size: 13px;
+}
+.labels{
+    text-align: start;
+    font-size: 15px;
+}
+.mensaje-exito{
+    display: flex!important;
+}

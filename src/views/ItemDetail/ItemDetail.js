@@ -56,15 +56,15 @@ const ItemDetail = ({ item, id }) => {
 				}
 				{carrito.map((elem) => {
 					if((elem.id) === (id)){
-						//console.log("esto esta");
 						return(
-						<Button key={elem.id} animated className="terminarCompra"
-							onClick={() => removeCarrito(id)}>
-							<Button.Content visible>Remover de carrito</Button.Content>
-							<Button.Content hidden><Icon name='delete' /></Button.Content>
-						</Button>) 
+							<Button key={elem.id} animated className="terminarCompra"
+								onClick={() => removeCarrito(id)}>
+								<Button.Content visible>Remover de carrito</Button.Content>
+								<Button.Content hidden><Icon name='delete' /></Button.Content>
+							</Button>
+						) 
 					}
-				})} 
+				},[id])} 
 
 			</Card>
 		</div>
